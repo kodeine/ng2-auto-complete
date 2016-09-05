@@ -93,7 +93,7 @@ export class AutoCompleteDirective implements OnInit {
     });
   }
 
-  hideAutoCompleteDropdown = (event?): void =>  {
+  hideAutoCompleteDropdown = (event?: any): void =>  {
     if (this.componentRef) {
       if (
         event && event.type === 'click' &&
