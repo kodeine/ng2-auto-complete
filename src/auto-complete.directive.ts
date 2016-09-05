@@ -50,7 +50,7 @@ export class AutoCompleteDirective implements OnInit {
   ngOnInit(): void {
     let divEl = document.createElement("div");
     divEl.className = 'ng2-auto-complete';
-    divEl.style.display = 'inline-block';
+    // divEl.style.display = 'inline-block';
     divEl.style.position = 'relative';
     this.el.parentElement.insertBefore(divEl, this.el.nextSibling);
     divEl.appendChild(this.el);
@@ -68,12 +68,15 @@ export class AutoCompleteDirective implements OnInit {
   showAutoCompleteDropdown() {
     document.addEventListener('click', this.hideAutoCompleteDropdown);
     this.hideAutoCompleteDropdown();
+    setTimeout(() => {
 
-    let factory = this.resolver.resolveComponentFactory(AutoCompleteComponent);
+      let factory = this.resolver.resolveComponentFactory(AutoCompleteComponent);
 
       this.componentRef = this.viewContainerRef.createComponent(factory);
       this.acEl = this.componentRef.location.nativeElement;
       let component = this.componentRef.instance;
+
+      // console.log('xxxxxxxxxxxxxxxxxxxxx', this.componentRef);
 
       component.listFormatter = this.listFormatter;
       //component.prefillFunc = this.prefillFunc;
@@ -87,9 +90,10 @@ export class AutoCompleteDirective implements OnInit {
 
       this.acEl.style.display = 'none';
       setTimeout(this.styleAutoCompleteDropdown);
+    });
   }
 
-  hideAutoCompleteDropdown = (event?: any): void =>  {
+  hideAutoCompleteDropdown = (event?): void =>  {
     if (this.componentRef) {
       if (
         event && event.type === 'click' &&
@@ -113,9 +117,10 @@ export class AutoCompleteDirective implements OnInit {
     this.acEl.style.width = thisElBCR.width + 'px';
     this.acEl.style.position = 'absolute';
     this.acEl.style.zIndex = '1';
-    this.acEl.style.top = '0';
-    this.acEl.style.left = '0';
+    this.acEl.style.top = '-8px';
+    this.acEl.style.left = '-1px';
     this.acEl.style.display = 'inline-block';
+
 
     component.inputEl.style.width = (thisElBCR.width - 30) + 'px';
     component.inputEl.style.height = thisElBCR.height + 'px';
