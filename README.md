@@ -17,7 +17,7 @@ Plunker Example: https://plnkr.co/edit/1N4onb
 2. add `map` and `packages` to your `systemjs.config.js`
 
         map['ng2-auto-complete'] = 'node_modules/ng2-auto-complete/dist';
-        packages['ng2-auto-complete'] = { main: 'index.js', defaultExtension: 'js' }
+        packages['ng2-auto-complete'] = { main: 'ng2-auto-complete.umd.js', defaultExtension: 'js' }
         
 3. import Ng2AutoCompleteModule to your AppModule
 
@@ -67,12 +67,14 @@ please send me email to `allenhwkim AT gmail.com` with your github id.
   * **`source`**, array or string, required. data source for dropdown list
   * **`placeholder`**,  string, input guide text
   * **`list-formatter`**, function variable name, custom list formatting function.e.g. 'myListFormatter', not 'myListFormatter()'
-  * **`value-changed`**, function variable name, callback function that is executed when dropdown is selected. e.g. `myCallback`, not `myCallback(object)`
   * **`path-to-data`**, string, e.g., `data.myList`, path to array data in http response
   * **`min-chars, number`**, when source is remote data, the number of character to see dropdown list
   * **`value-property-name`**, string, key name of value. default is `id`
   * **`display-property-name`**, string, key name of text to show. default is `value`
 
+  * **`value-changed`**, callback function that is executed when a new dropdown is selected.
+     e.g. `(value-changed)="myCallback($event)"`
+     
 ## For Developers
 
 ### To start
@@ -81,5 +83,5 @@ please send me email to `allenhwkim AT gmail.com` with your github id.
     $ cd ng2-popup
     $ npm install
     $ npm start
-
+    $ npm run build # to build `dist` directory
 
