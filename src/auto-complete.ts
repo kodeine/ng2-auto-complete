@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs";
 import 'rxjs/Rx';
+import {Cryptor} from "../../../src/app/utils/common";
 
 /**
  * provides auto-complete related utility functions
@@ -47,7 +48,8 @@ export class AutoComplete {
     }
     
     return this.http.get(url)
-      .map( resp => resp.json())
+      // .map( resp => resp.json())
+      .map( resp => Cryptor.deserialize(resp))
       .map( resp => {
         var list = resp.data  || resp;
         if (this.pathToData) {
@@ -60,4 +62,3 @@ export class AutoComplete {
       });
   };
 }
-
