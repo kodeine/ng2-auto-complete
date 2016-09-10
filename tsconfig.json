@@ -1,32 +1,21 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["es5", "es6", "dom"],
+    "declaration": true,
     "module": "commonjs",
-    "moduleResolution": "node",
-    "noEmitHelpers": false,
+    "target": "es5",
+    "outDir": "dist",
+    "rootDir": "./src",
+    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
-    "pretty": true,
-    "allowUnreachableCode": true,
-    "allowUnusedLabels": true,
-    "noImplicitAny": false,
-    "noImplicitReturns": false,
-    "noImplicitUseStrict": false,
-    "noFallthroughCasesInSwitch": false,
-    "allowSyntheticDefaultImports": true,
-    "suppressExcessPropertyErrors": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "outDir": "dist",
-    "baseUrl": "src"
+    "moduleResolution": "node"
   },
-  "files": [
-    "src/index.ts"
-  ],
   "exclude": [
-    "node_modules"
-  ],
-  "compileOnSave": false,
-  "buildOnSave": false
+    "typings/main.d.ts",
+    "typings/main",
+    "node_modules",
+    "test",
+    "src",
+    "index.ts"
+  ]
 }

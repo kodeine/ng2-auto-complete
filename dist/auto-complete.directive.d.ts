@@ -9,6 +9,7 @@ export declare class AutoCompleteDirective implements OnInit {
     viewContainerRef: ViewContainerRef;
     placeholder: string;
     listFormatter: (arg: any) => void;
+    valueChanged: (value: any) => void;
     source: any;
     pathToData: string;
     minChars: number;
@@ -16,7 +17,6 @@ export declare class AutoCompleteDirective implements OnInit {
     displayPropertyName: string;
     ngModel: String;
     ngModelChange: EventEmitter<{}>;
-    valueChanged: EventEmitter<{}>;
     componentRef: ComponentRef<AutoCompleteComponent>;
     el: HTMLElement;
     acEl: HTMLElement;

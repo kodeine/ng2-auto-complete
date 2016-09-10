@@ -1,6 +1,7 @@
 .idea
-app
+test
 src
-node_modules
+build.sh
 tsconfig.json
-webpack.config.js
+node_modules
+typings
