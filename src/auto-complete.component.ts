@@ -72,7 +72,7 @@ var module: any; // just to pass type check
   }
 
   .auto-complete ul li.selected {
-    background-color: #ccc;
+    background-color: #99d5cf;
   }
 
   .auto-complete ul li:last-child {
@@ -80,7 +80,7 @@ var module: any; // just to pass type check
   }
 
   .auto-complete ul li:hover {
-    background-color: #ccc;
+    background-color: #99d5cf;
   }
 
 `],
